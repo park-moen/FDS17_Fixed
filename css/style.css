@@ -6,6 +6,7 @@
 *::after {
   box-sizing: border-box;
 }
+/* 생선되게 전에 요소에 특성을 미리 지정하는 방법 */
 html {
   font-size: 10px;
 }
@@ -40,8 +41,13 @@ body {
 .main {
   background-color: blue;
   padding: 30px 15px;
-  overflow: hidden;
+  /* overflow: hidden; */
   min-height: 450px;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
 }
 .group {
   float: left;
