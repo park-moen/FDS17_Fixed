@@ -38,6 +38,7 @@ body {
 }
 .visual {
   background-color: lime;
+  height: 120px;
   /* height: 120px; */
 }
 /* main content */
