@@ -10,9 +10,23 @@
 html {
   font-size: 10px;
 }
-
+/* 숨김 컨텐츠 */
+.a11y-hidden {
+  position: absolute;
+  width: -1;
+  height: -1;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
 body {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #181818;
   background-color: #fff;
   font-family: "Spoqa Han Sans";
@@ -33,13 +47,72 @@ body {
   width: 940px;
 }
 .header {
-  background-color: yellow;
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 0 0 15px 15px;
+}
+.header .logo {
+  position: absolute;
+  top: 30px;
+  left: 65px;
+}
+/* 맴버  */
+.member {
+  padding-left: 0;
+  position: absolute;
+  right: 30px;
+  margin-top: 0;
+  padding: 15px 0;
+}
+.member li {
+  float: left;
+  list-style: none;
+  text-transform: uppercase;
+}
+.member a {
+  padding: 10px 0;
+  padding-right: 10px;
+}
+.member span {
+  padding-right: 10px;
+}
+/* 내비게이션 */
+.navigaition {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin: 0 30px;
+}
+.menu {
+  width: 100%;
+  padding-left: 225px;
+  background-color: orange;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 40px;
+  margin-bottom: 0;
+  margin-bottom: 40px;
+  border-top: 2px solid;
+  border-radius: 0 0 5px 5px;
+}
+.menu .btn-menu {
+  height: 47px;
+  padding: 0 20px;
+  font-size: 1.6rem;
+  border: 0;
+  background-color: inherit;
+  color: #fff;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+}
+/* 임시 리스트 삭제 */
+.menu .sub-menu {
+  display: none;
 }
 .visual {
   background-color: lime;
   height: 120px;
 }
-/* main content */
+/* 메인 콘텐츠 */
 .main {
   background-color: blue;
   min-height: 450px;
