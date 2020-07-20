@@ -37,6 +37,16 @@ a {
   text-decoration: none;
   color: inherit;
 }
+/* form 테두리 삭제 */
+fieldset {
+  border: 0;
+  padding: 0;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 /* 레이아웃 */
 .container {
   display: flex;
@@ -271,6 +281,91 @@ a {
   background: coral;
   width: 190px;
 }
+/* 로그인 */
+.login {
+  background-color: #db5629;
+  background-image: radial-gradient(circle at right top, #ef962f, #db5629);
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 0 #ccc;
+  padding: 10px;
+  font-weight: 400;
+  /* padding에 값을 주니깐 main의 pink값이 사라지는 이유  h2의 기본적으로 margin값을 가지고 있어서 이다/padding을 주지 않으면 위에 pink색이 보이는 이유는 padding처럼 margin을 나눠주는 값이 없어서 이다.  */
+}
+.login-heading {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff0;
+  padding-left: 10px;
+}
+.login-form {
+  background-color: #fff;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  margin-top: 10px;
+  padding: 10px 10px 0 10px;
+  position: relative;
+}
+.login-form fieldset {
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 10px;
+}
+.user-email,
+.user-pw {
+  width: 150px;
+  font-size: 1.4rem;
+}
+.user-email {
+  margin-bottom: 5px;
+}
+.login-form label {
+  display: inline-block;
+  width: 55px;
+}
+.login-form input {
+  width: 90px;
+  height: 22px;
+}
+.btn-login {
+  background-color: #db5629;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 3px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 0;
+}
+.member-only {
+  background-color: #fff;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  padding: 10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-size: 1.3rem;
+}
+.member-only li:first-child {
+  float: left;
+}
+.member-only li:last-child {
+  float: right;
+}
+.member-only a {
+  padding: 10px 0;
+}
+.member-only a::before {
+  content: "\e803";
+  font-family: "fontello";
+  display: inline-block;
+  margin-right: 0.2em;
+  color: #db5629;
+}
+/* 슬로건 */
 .slogan {
   background-color: orange;
 }
