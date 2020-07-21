@@ -49,10 +49,10 @@ fieldset {
 }
 /* 레이아웃 */
 .container {
-  display: flex;
+  /* display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
-  align-items: center;
+  align-items: center; */
 }
 .header,
 .visual,
@@ -60,12 +60,15 @@ fieldset {
 .slogan,
 .footer {
   width: 940px;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* 헤더 */
 .header {
   background-color: #fff;
   border-radius: 0 0 15px 15px;
-  padding: 0 30px 0 30px;
+  padding: 1px 30px;
+  /* 마진 병합 현상을 해결하는 방법으로 위아래 패딩값으로  줬다.*/
   position: relative;
 }
 /* 로고 */
@@ -261,24 +264,22 @@ fieldset {
 }
 /* main content */
 .main {
-  background-color: blue;
+  background-color: #fff;
   min-height: 450px;
   padding: 30px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
+  border-radius: 15px 15px 0 0;
 }
 .group1 {
-  background: pink;
   width: 250px;
 }
 .group2 {
-  background: lightgreen;
   width: 380px;
 }
 .group3 {
-  background: coral;
   width: 190px;
 }
 /* 로그인 */
@@ -390,6 +391,57 @@ fieldset {
 .validation-list a:hover {
   color: #f00;
 }
+/* 웹 관련 용어 */
+.term {
+  background: #ccc linear-gradient(180deg, #cccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+.term-heading {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.term-list {
+  margin-top: 10px;
+  /* 겹치는 현상 나중에 odd를 빼도 조금의 여백이 남는다 */
+  margin: 0;
+}
+.term-list > div {
+  margin-top: 10px;
+}
+.term-list > div::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.odd .term-list-subject,
+.odd .term-list-brief {
+  width: 145px;
+  float: right;
+}
+.term-list-subject {
+  color: #296897;
+}
+.odd .term-list-thumnail {
+  margin-left: 0;
+  float: left;
+}
+.term-list-brief {
+  margin-left: 0;
+  margin-top: 5px;
+}
+.even .term-list-subject,
+.even .term-list-brief {
+  width: 145px;
+  float: left;
+}
+.even .term-list-thumnail {
+  margin-left: 0;
+  float: right;
+}
 /* 슬로건 */
 .slogan {
   background-color: orange;
@@ -425,3 +477,35 @@ fieldset {
 - static은 offset을  가지고 있지 않다./ 렐러티브를 가지지 않으면 가장 최상위 요소를 찾아간다 . 
 -
 */
+
+/* .term {
+  background-color: #aaa;
+  background-image: linear-gradient(180deg, #ccc, #eee);
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.term-heading {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+}
+.term-list {
+  position: relative;
+  padding-left: 75px;
+  margin: 15px 0 0 0;
+}
+.term-list-subject {
+  margin-bottom: 10px;
+  color: #00f;
+}
+.term-list-thumnail {
+  position: absolute;
+  top: 0;
+  left: -40px;
+}
+.term-list-brief {
+  margin: 0;
+} */
