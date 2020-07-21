@@ -289,6 +289,7 @@ fieldset {
   box-shadow: 5px 5px 0 0 #ccc;
   padding: 10px;
   font-weight: 400;
+  width: calc(100% - 5px);
   /* padding에 값을 주니깐 main의 pink값이 사라지는 이유  h2의 기본적으로 margin값을 가지고 있어서 이다/padding을 주지 않으면 위에 pink색이 보이는 이유는 padding처럼 margin을 나눠주는 값이 없어서 이다.  */
 }
 .login-heading {
@@ -364,6 +365,30 @@ fieldset {
   display: inline-block;
   margin-right: 0.2em;
   color: #db5629;
+}
+/* 유효성 검사 배너 링크 */
+.validation-list {
+  list-style: none;
+  margin-top: 25px;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.validation-list a {
+  display: block;
+  padding: 8px 10px 8px 45px;
+  /* line-height: 30px; */
+  margin-top: 10px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  background-color: #ccc;
+  /* 만약 이미지가 안나오면 #ccc값을 주겠다는 의미 */
+  background-image: url(./images/validation_icon.png),
+    linear-gradient(180deg, #ccc, #eee);
+  background-repeat: no-repeat, repeat;
+  background-position: 15px 50%, 0 0;
+}
+.validation-list a:hover {
+  color: #f00;
 }
 /* 슬로건 */
 .slogan {
