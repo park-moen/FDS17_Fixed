@@ -1,6 +1,6 @@
 @import url(./normalize.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-@import url(./fontello.css);
+
 *,
 *::before,
 *::after {
@@ -10,26 +10,7 @@
 html {
   font-size: 10px;
 }
-/* 숨김 컨텐츠 */
-.a11y-hidden {
-  position: absolute;
-  width: -1;
-  height: -1;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-li {
-  list-style: none;
-}
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: block;
-}
+
 body {
   font-size: 1.4rem;
   color: #181818;
@@ -37,11 +18,17 @@ body {
   font-family: "Spoqa Han Sans";
   font-weight: 400;
 }
+/* 링크 스타일 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* 레이아웃 */
 .container {
   background-color: #eee;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: flex-end;
   align-items: center;
 }
 .header,
@@ -51,121 +38,59 @@ body {
 .footer {
   width: 940px;
 }
+/* 헤더 */
 .header {
-  background-color: #ffffff;
-  position: relative;
+  background-color: #fff;
   border-radius: 0 0 15px 15px;
+  padding: 0 30px 0 30px;
+  position: relative;
 }
-.header .logo {
+/* 로고 */
+.logo {
   position: absolute;
-  top: 30px;
+  top: 45px;
   left: 65px;
 }
-/* 맴버  */
+/* 멤버링크 */
 .member {
+  list-style: none;
   padding-left: 0;
-  position: absolute;
-  right: 30px;
-  top: -2px;
-  margin-top: 0;
-  padding: 15px 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: -8px;
+  font-size: 0;
+  text-align: right;
+}
+.member li,
+.member a {
+  display: inline-block;
 }
 .member li {
-  float: left;
-  list-style: none;
-  text-transform: uppercase;
-}
-.member a {
-  padding: 10px 0;
-  padding-right: 10px;
-}
-.member span {
-  padding-right: 10px;
-}
-/* 내비게이션 */
-.navigaition {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  margin: 0 30px;
-}
-.menu {
-  width: 100%;
-  padding-left: 225px;
-  background: linear-gradient(
-    to bottom,
-    #f75931 0%,
-    #ed3e09 28%,
-    #e26868 42%,
-    #e5372b 72%,
-    #ef8e81 100%
-  );
-  display: flex;
-  flex-flow: row nowrap;
-  margin-bottom: 0;
-  margin: 40px 0;
-  border-top: 2px solid;
-  border-radius: 0 0 5px 5px;
-  height: 50px;
-}
-.menu-item {
-}
-.menu .btn-menu {
-  padding: 0 20px;
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 48px;
-  border: 0;
-  background-color: transparent;
-  color: #fff;
-  border-left: 2px solid rgba(255, 255, 255, 0.5);
-  text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
-}
-.sub-menu {
-  padding-left: 0;
-  position: absolute;
-}
-.sub-menu li {
-  float: left;
-}
-.sub-menu a {
-  display: inline-block;
-  line-height: 3em;
-  margin-right: 10px;
   font-size: 1.4rem;
 }
-.sub-menu a::before {
-  content: "\f192";
-  font-family: "fontello";
-  display: inline-block;
-  width: 1em;
-  margin-right: 0.2em;
-  margin-left: 0.2em;
+.member [aria-hidden] {
+  /* margin: 0 5px; */
 }
-/* 임시 리스트 삭제 */
-
-.sub-menu1 {
+.member a {
+  text-transform: uppercase;
+  line-height: 2em;
+  padding-right: 5px;
 }
-.sub-menu2 {
-  display: none;
+.member li:first-child a {
+  padding-left: 15px;
 }
-.sub-menu3 {
-  display: none;
+.member a > span {
+  /* background-color: yellow; */
+  padding: 5px 5px 5px 0;
 }
-.sub-menu4 {
-  display: none;
-}
-.sub-menu5 {
-  display: none;
-}
-.sub-menu6 {
-  display: none;
+.menu {
+  background-color: yellow;
 }
 .visual {
   background-color: lime;
   height: 120px;
 }
-/* 메인 콘텐츠 */
+/* main content */
 .main {
   background-color: blue;
   min-height: 450px;
@@ -200,3 +125,24 @@ body {
 .footer {
   background-color: skyblue;
 }
+
+/* ** 고정형 레이아웃 **
+
+1. 가운데 정렬(화면 해상도)
+2. 일관성을 가지고 디자인하기
+3. header의 높이는 픽스하지 않는다
+4. 의도에 따라서 픽스 시킨다.
+5. main도 높이를 픽스하지 않고/ 최소 높이만 준다(min-height)
+6. slogan, footer는 픽스하지 않는다 (픽스 = height의 값을 주다)
+
+   ** header 순서 정하기 **
+
+7. 로고 >>>>> text logo / text logo >>> img logo(alt속성 추기) >>>>> 대제목<h1.logo> , <a>기능
+8. 멤버 링크 >>>> div만 쓰지 않고 기계도 해석 가능하게 만들기 >>>>> 목록화 (ul, ol.member >>> li)
+   > > > > > > :은 span으로 묵기(읽을 필요는 없음 >> aria-hidden = true 사용 >> 보조 기기가 읽지 않음)
+9. 내비게이션 */
+
+/* offset 설정 : 위치값을 설정하다 
+- static은 offset을  가지고 있지 않다./ 렐러티브를 가지지 않으면 가장 최상위 요소를 찾아간다 . 
+-
+*/
