@@ -1,6 +1,6 @@
 @import url(./normalize.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-
+@import url(./fontello.css);
 *,
 *::before,
 *::after {
@@ -14,7 +14,6 @@ html {
 body {
   font-size: 1.4rem;
   color: #181818;
-  background-color: #fff;
   font-family: "Spoqa Han Sans";
   font-weight: 400;
 }
@@ -37,11 +36,11 @@ a {
 }
 /* 레이아웃 */
 .container {
-  background-color: #eee;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: center;
+  background: #eee linear-gradient(180deg, #aaaa 0%, #ccc 50%, #fff 100%);
 }
 .header,
 .visual,
@@ -115,6 +114,8 @@ a {
 }
 .menu-item {
   float: left;
+  position: relative;
+  white-space: nowrap;
   /* display: inline-block; */
 }
 .menu-act .btn-menu {
@@ -137,17 +138,45 @@ a {
   border-left: 2px solid rgba(255, 255, 255, 0.5);
   text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
 }
-
-/* 임시 숨김 */
 .sub-menu {
   position: absolute;
-  background-color: yellow;
+  /* background-color: yellow; */
   list-style: none;
   padding: 0;
 }
 .sub-menu li {
-  float: left;
+  display: inline-block;
 }
+.sub-menu a {
+  line-height: 2.5em;
+  margin-right: 15px;
+  font-weight: 400;
+}
+.sub-menu li:last-child a {
+  margin-right: 0;
+}
+.sub-menu li::before {
+  content: "\f192";
+  font-family: "fontello";
+  display: inline-block;
+  margin-right: 5px;
+  text-align: center;
+}
+.sub-menu li:hover::before,
+.sub-menu li:focus::before {
+  content: "\e800";
+}
+.sub-menu1,
+.sub-menu2,
+.sub-menu3 {
+  left: 0;
+}
+.sub-menu4,
+.sub-menu5,
+.sub-menu6 {
+  right: 0;
+}
+/* 임시 숨김 */
 .sub-menu1 {
   display: block;
 }
@@ -166,9 +195,26 @@ a {
 .sub-menu6 {
   display: none;
 }
+@keyframes Animove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(400px, 75px);
+  }
+}
 .visual {
-  background-color: lime;
+  background-image: url(./images/bg_flower.png);
+  background-color: transparent;
+  border: 1px solid;
   height: 120px;
+}
+.visual-text {
+  animation: Animove 2s ease-in-out both;
+  font-size: 2.2rem;
+  font-weight: 400;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: inline-block;
 }
 /* main content */
 .main {
