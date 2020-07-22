@@ -23,6 +23,18 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.a11y-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+.claerfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 /* 레이아웃 */
 .container {
   background-color: #eee;
@@ -48,15 +60,15 @@ a {
 /* 로고 */
 .logo {
   position: absolute;
-  top: 45px;
-  left: 65px;
+  top: 33px;
+  left: 60px;
 }
 /* 멤버링크 */
 .member {
   list-style: none;
   padding-left: 0;
   margin-top: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   margin-right: -8px;
   font-size: 0;
   text-align: right;
@@ -85,6 +97,74 @@ a {
 }
 .menu {
   background-color: yellow;
+  list-style: none;
+  height: 47px;
+  margin: 0;
+  margin-bottom: 40px;
+  padding-left: 225px;
+  border-radius: 0 0 5px 5px;
+  border-top: 2px solid #000;
+  background-color: #fc6203;
+  background: linear-gradient(
+    to right,
+    #fc6203 0%,
+    #ea874d 35%,
+    #f9af84 51%,
+    #f96b18 100%
+  );
+}
+.menu-item {
+  float: left;
+  /* display: inline-block; */
+}
+.menu-act .btn-menu {
+  color: #fceb03;
+}
+.menu-act .btn-menu::after {
+  content: "";
+  height: 2px;
+  background-color: #000;
+  display: block;
+}
+.btn-menu {
+  background-color: transparent;
+  border: 0;
+  padding: 0 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 45px;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+}
+
+/* 임시 숨김 */
+.sub-menu {
+  position: absolute;
+  background-color: yellow;
+  list-style: none;
+  padding: 0;
+}
+.sub-menu li {
+  float: left;
+}
+.sub-menu1 {
+  display: block;
+}
+.sub-menu2 {
+  display: none;
+}
+.sub-menu3 {
+  display: none;
+}
+.sub-menu4 {
+  display: none;
+}
+.sub-menu5 {
+  display: none;
+}
+.sub-menu6 {
+  display: none;
 }
 .visual {
   background-color: lime;
