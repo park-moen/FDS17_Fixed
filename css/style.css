@@ -158,7 +158,11 @@ fieldset {
   padding-left: 0;
   list-style: none;
   white-space: nowrap;
+  display: none;
   /* width: 300px; */
+}
+.menu-act .sub-menu {
+  display: block;
 }
 .sub-menu li,
 .sub-menu a {
@@ -191,7 +195,7 @@ fieldset {
   right: 0;
 }
 .sub-menu1 {
-  display: block;
+  display: none;
 }
 .sub-menu2 {
   display: none;
@@ -487,21 +491,33 @@ fieldset {
 }
 /* 공지사항 및 자료실  */
 .board {
-  margin-top: 20px;
   position: relative;
-  min-height: 180px;
+  margin-top: 20px;
+  padding-top: 45px;
 }
+
 .notice-heading,
 .pds-heading {
   float: left;
   margin: 0;
   font-size: 1.4rem;
   font-weight: 400;
+  position: absolute;
+  top: 0;
 }
+
+.notice-heading {
+  left: 0;
+}
+
+.pds-heading {
+  left: 73px;
+}
+
 .tab {
   display: block;
   color: #666;
-  border: 1px solid #aaa;
+  border: 1px solid#aaa;
   border-radius: 5px 5px 0 0;
   padding: 5px 10px;
   background: #ccc linear-gradient(180deg, #ccc, #eee);
@@ -511,58 +527,64 @@ fieldset {
   border-color: #db5629 #db5629 #fff #db5629;
   background: #fff;
 }
+
 .notice-list,
 .pds-list,
 .notice-more,
 .pds-more {
   display: none;
 }
+
 .tab-act .notice-list,
 .tab-act .pds-list,
 .tab-act .notice-more,
 .tab-act .pds-more {
   display: block;
 }
+
 .notice-list,
 .pds-list {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 100%;
+  min-height: 130px;
+  /* 130dp 45가 추가되어서 별로 늘어나지 않았다 */
 }
-.notice-list li,
-.pds-list li {
-  margin-bottom: 10px;
+
+.notice-list a::before,
+.pds-list a::before {
+  content: "\f192";
+  font-family: "fontello";
+  margin-right: 0.2em;
+  vertical-align: middle;
 }
+
 .notice-list li::after,
 .pds-list li::after {
   content: "";
   display: block;
   clear: both;
 }
+
 .notice-list a,
-.pds-list a {
-  float: left;
+.psd-list a {
   width: 300px;
+  float: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* 단독을 사용하면 아무 의미가 없다. */
 }
-.notice-list a::before,
-.pds-list a::before {
-  content: "\f192";
-  font-family: "fontello";
-  display: inline-block;
-  margin-right: 0.2em;
-}
+
 .notice-list time,
-.pds-list {
+.pds-list time {
   float: right;
 }
+
+.notice-list li,
+.pds-list li {
+  margin-bottom: 10px;
+}
+
 .notice-more,
 .pds-more {
   position: absolute;
@@ -570,8 +592,9 @@ fieldset {
   right: -8px;
   padding: 8px;
 }
+
 .icon-plus::before {
-  color: hsla(110, 30%, 50%, 1);
+  color: hsla(110, 70%, 50%, 1);
 }
 /* 슬로건 */
 .slogan {
@@ -639,4 +662,97 @@ fieldset {
 }
 .term-list-brief {
   margin: 0;
+} */
+
+/* .board {
+  background-color: yellow;
+  margin-top: 20px;
+  position: relative;
+  min-height: 180px;
+}
+.notice-heading,
+.pds-heading {
+  background-color: pink;
+  float: left;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.tab {
+  display: block;
+  color: #666;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 10px;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+}
+.tab-act .tab {
+  color: #db5629;
+  border-color: #db5629 #db5629 #fff #db5629;
+  background: #fff;
+}
+.notice-list,
+.pds-list,
+.notice-more,
+.pds-more {
+  display: none;
+}
+.tab-act .notice-list,
+.tab-act .pds-list,
+.tab-act .notice-more,
+.tab-act .pds-more {
+  display: block;
+}
+.notice-list,
+.pds-list {
+  background-color: silver;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+}
+.notice-list li,
+.pds-list li {
+  background-color: orange;
+  margin-bottom: 10px;
+}
+.notice-list li::after,
+.pds-list li::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.notice-list a,
+.pds-list a {
+  background-color: skyblue;
+  float: left;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.notice-list a::before,
+.pds-list a::before {
+  content: "\f192";
+  font-family: "fontello";
+  display: inline-block;
+  margin-right: 0.2em;
+}
+.notice-list time,
+.pds-list {
+  background-color: violet;
+  float: right;
+}
+.notice-more,
+.pds-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+.icon-plus::before {
+  color: hsla(110, 30%, 50%, 1);
 } */
