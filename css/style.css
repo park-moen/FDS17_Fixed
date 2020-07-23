@@ -495,7 +495,6 @@ fieldset {
   margin-top: 20px;
   padding-top: 45px;
 }
-
 .notice-heading,
 .pds-heading {
   float: left;
@@ -505,15 +504,12 @@ fieldset {
   position: absolute;
   top: 0;
 }
-
 .notice-heading {
   left: 0;
 }
-
 .pds-heading {
   left: 73px;
 }
-
 .tab {
   display: block;
   color: #666;
@@ -527,21 +523,18 @@ fieldset {
   border-color: #db5629 #db5629 #fff #db5629;
   background: #fff;
 }
-
 .notice-list,
 .pds-list,
 .notice-more,
 .pds-more {
   display: none;
 }
-
 .tab-act .notice-list,
 .tab-act .pds-list,
 .tab-act .notice-more,
 .tab-act .pds-more {
   display: block;
 }
-
 .notice-list,
 .pds-list {
   list-style: none;
@@ -550,7 +543,6 @@ fieldset {
   min-height: 130px;
   /* 130dp 45가 추가되어서 별로 늘어나지 않았다 */
 }
-
 .notice-list a::before,
 .pds-list a::before {
   content: "\f192";
@@ -558,14 +550,12 @@ fieldset {
   margin-right: 0.2em;
   vertical-align: middle;
 }
-
 .notice-list li::after,
 .pds-list li::after {
   content: "";
   display: block;
   clear: both;
 }
-
 .notice-list a,
 .psd-list a {
   width: 300px;
@@ -574,17 +564,14 @@ fieldset {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .notice-list time,
 .pds-list time {
   float: right;
 }
-
 .notice-list li,
 .pds-list li {
   margin-bottom: 10px;
 }
-
 .notice-more,
 .pds-more {
   position: absolute;
@@ -592,9 +579,58 @@ fieldset {
   right: -8px;
   padding: 8px;
 }
-
 .icon-plus::before {
   color: hsla(110, 70%, 50%, 1);
+}
+/* 새소식 */
+.news {
+  margin-top: 20px;
+  position: relative;
+}
+.news::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background: #aaa linear-gradient(90deg, #aaa, #fff);
+}
+.news-heading {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #db5629;
+}
+.news-item {
+  margin-top: 30px;
+  padding-left: 130px;
+  position: relative;
+}
+.news-item-subject {
+  margin: 0;
+  font-size: 1.4rem;
+}
+.news-item-brief {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+.news-item-thumbnail {
+  margin: 0;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  text-align: center;
+}
+.news-item-thumbnail img {
+  margin-bottom: 15px;
+  box-shadow: 0 15px 20px 2px #ccc;
+}
+.news-more {
+  position: absolute;
+  padding: 8px;
+  top: -8px;
+  right: -8px;
 }
 /* 슬로건 */
 .slogan {
