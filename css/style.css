@@ -16,6 +16,8 @@ body {
   color: #181818;
   font-family: "Spoqa Han Sans";
   font-weight: 400;
+  background: url(./images/bg_flower.png) no-repeat 50% 0 scroll,
+    #eee linear-gradient(180deg, #aaaa 0%, #ccc 50%, #fff 100%);
 }
 /* 링크 스타일 */
 a {
@@ -40,7 +42,6 @@ a {
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: center;
-  background: #eee linear-gradient(180deg, #aaaa 0%, #ccc 50%, #fff 100%);
 }
 .header,
 .visual,
@@ -140,7 +141,6 @@ a {
 }
 .sub-menu {
   position: absolute;
-  /* background-color: yellow; */
   list-style: none;
   padding: 0;
 }
@@ -195,27 +195,62 @@ a {
 .sub-menu6 {
   display: none;
 }
-@keyframes Animove {
+@keyframes textAni {
   0% {
     transform: translate(0, 0);
+    color: rgba(0, 0, 0, 0);
+    font-size: 1.4rem;
   }
   100% {
     transform: translate(400px, 75px);
+    color: rgba(0, 0, 0, 1);
+    font-size: 2.4rem;
   }
 }
+@keyframes bgAni {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .visual {
-  background-image: url(./images/bg_flower.png);
-  background-color: transparent;
-  border: 1px solid;
   height: 120px;
+  position: relative;
+}
+.visual::before,
+.visual::after {
+  animation: bgAni 3s ease-in-out infinite alternate;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.visual::before {
+  background-image: url(./images/ani_flower_01.png),
+    url(./images/ani_flower_02.png);
+  background-position: 0 -10px, 670px 0;
+  /* 개별 속성의 멀티 */
+}
+.visual::after {
+  background-image: url(./images/ani_flower_03.png),
+    url(./images/ani_flower_04.png);
+  background-position: 300px 0px, 800px 20px;
+  /* 개별 속성의 멀티 */
+  animation-delay: 1.5s;
 }
 .visual-text {
-  animation: Animove 2s ease-in-out both;
-  font-size: 2.2rem;
+  animation: textAni 2s ease-in-out forwards;
   font-weight: 400;
   font-family: Georgia, "Times New Roman", Times, serif;
   display: inline-block;
 }
+
 /* main content */
 .main {
   background-color: blue;
