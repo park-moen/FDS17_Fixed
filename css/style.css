@@ -632,6 +632,56 @@ fieldset {
   top: -8px;
   right: -8px;
 }
+/* 신규 이벤트 및 관련 사이트 */
+.gradient-box {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+}
+.event {
+  background-color: yellow;
+  border-bottom: 1px solid #aaa;
+  position: relative;
+}
+.event-heading {
+  font-size: 1.6rem;
+  margin: 0;
+}
+.event-heading span {
+  color: #db5629;
+}
+.event-thumbnail,
+.event-brief {
+  margin: 10px 0;
+}
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #999;
+}
+.event-brief em {
+  font-style: normal;
+}
+.btn-wrap {
+  background-color: pink;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn-prev,
+.btn-next {
+  background-attachment: #ccc;
+  background-image: url(./images/back_forward.png);
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.btn-next {
+  background-position: -37px 0;
+}
 /* 슬로건 */
 .slogan {
   background-color: orange;
@@ -791,4 +841,73 @@ fieldset {
 }
 .icon-plus::before {
   color: hsla(110, 30%, 50%, 1);
+} */
+
+/* .gradient-box {
+  background: #aaa linear-gradient(180deg, #ccc, #fff) no-repeat center;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+.event {
+  position: relative;
+  padding: 15px;
+}
+.event-heading {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.event-heading span {
+  color: #f00;
+}
+.event-brief {
+  font-weight: 400;
+  font-style: initial;
+}
+.btn-wrap {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  overflow: hidden;
+}
+.btn-prev {
+  background: url(./images/back_forward.png) no-repeat;
+  width: 19px;
+  height: 18px;
+  text-indent: -55em;
+  border: 0;
+  padding: 0;
+}
+.btn-next {
+  background: url(./images/back_forward.png) no-repeat -37px;
+  width: 19px;
+  height: 18px;
+  text-indent: -55em;
+  border: 0;
+  padding: 0;
+} */
+
+/* 스프라이트 기법 */
+
+/* .btn-wrap {
+  background-color: yellow;
+  height: 18px;
+}
+.btn-prev,
+.btn-next {
+  background: #ccc url(./images/back_forward.png) no-repeat;  >> 속기법을 사용
+  background-image: url(./images/back_forward.png);  >> 개별 속성을 사용
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 100%;
+  border: 0;
+  overflow: hidden;
+  padding: 18px 0 0 0;
+  cursor: pointer;
+}
+.btn-next {
+  background-position: -36px 0;
+}
+.btn-wrap {
+  background-color: pink;
 } */
