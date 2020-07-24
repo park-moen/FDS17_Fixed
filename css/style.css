@@ -675,7 +675,7 @@ fieldset {
 }
 .btn-prev,
 .btn-next {
-  background-attachment: #ccc;
+  background: #ccc;
   background-image: url(./images/back_forward.png);
   background-repeat: no-repeat;
   width: 19px;
