@@ -641,17 +641,19 @@ fieldset {
   padding: 10px;
   background: #ccc linear-gradient(180deg, #ccc, #eee);
 }
-.event {
-  background-color: yellow;
-  border-bottom: 1px solid #aaa;
-  position: relative;
-}
-.event-heading {
+.event-heading,
+.related-heading {
   font-size: 1.6rem;
   margin: 0;
 }
-.event-heading span {
+.event-heading span,
+.related-heading span {
   color: #db5629;
+}
+/* 신큐 이벤트 */
+.event {
+  border-bottom: 1px solid #aaa;
+  position: relative;
 }
 .event-thumbnail,
 .event-brief {
@@ -665,7 +667,6 @@ fieldset {
   font-style: normal;
 }
 .btn-wrap {
-  background-color: pink;
   position: absolute;
   top: 0;
   right: 0;
@@ -685,6 +686,36 @@ fieldset {
 .btn-next {
   background-position: -37px 0;
 }
+.related {
+  margin-top: 10px;
+}
+.related-list {
+  background-color: #fff;
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 0 0;
+  height: 27px;
+  overflow: hidden;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  transition: all 1s;
+}
+.related-list:hover,
+.related-list:focus {
+  height: 147px;
+  padding: 10px 0;
+}
+.related-list li {
+  padding: 2px 5px;
+}
+.related-list a {
+  display: block;
+  line-height: 21px;
+  text-indent: 1em;
+}
+/* .related-list:hover {
+  animation: moveAni 1s alternate;
+} */
 /* 슬로건 */
 .slogan {
   background-color: orange;
