@@ -253,13 +253,14 @@ a {
 
 /* main content */
 .main {
-  background-color: blue;
+  background-color: #fff;
   min-height: 450px;
   padding: 30px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
+  border-radius: 15px;
 }
 .group1 {
   background: pink;
@@ -272,6 +273,148 @@ a {
 .group3 {
   background: coral;
   width: 190px;
+}
+
+/* 로그인 */
+.login {
+  background: linear-gradient(
+    to right,
+    #ea6619 0%,
+    #ea915d 35%,
+    #ea9260 70%,
+    #eabb9f 100%
+  );
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 0 #999;
+  font-weight: 400;
+}
+.login-heading {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #e9f513;
+  text-indent: 10px;
+  line-height: 22px;
+}
+.login-form {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  margin: 10px 0 0 0;
+  position: relative;
+}
+/* .login-form [role="group"] {
+  display: flex;
+  flex-flow: column nowrap;
+} */
+.login-form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #aaa;
+}
+.user-email,
+.user-pw {
+  width: 160px;
+  margin-bottom: 5px;
+}
+.user-email input,
+.user-pw input {
+  width: 95px;
+  line-height: 1.2;
+  text-indent: 0.3em;
+  border: 1px solid #ccc;
+}
+.user-email [for="userEmail"],
+.user-pw [for="userPw"] {
+  display: inline-block;
+  width: 4em;
+  font-size: 1.4rem;
+}
+.btn-login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  border: 1px solid #ea874d;
+  width: 50px;
+  height: 46px;
+  background-color: #ea874d;
+  color: #fff;
+  border-radius: 3px;
+  font-style: 1.2rem;
+}
+.member-only {
+  background-color: #fff;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  padding: 0 10px 10px;
+  border-radius: 0 0 5px 5px;
+  font-size: 1.3rem;
+}
+.member-only li:nth-child(1) {
+  float: left;
+}
+.member-only li:nth-child(2) {
+  float: right;
+}
+.member-only a {
+  padding: 5px 0;
+}
+.member-only a::before {
+  content: "\e803";
+  font-family: "fontello";
+  display: inline-block;
+  margin-right: 0.2em;
+  color: #ea6619;
+}
+/* 유효성 검사 사이트 */
+.validation-list {
+  margin-top: 20px;
+  padding-left: 0;
+  list-style: none;
+}
+.validation-list li {
+  border: 1px solid #aaa;
+  background: linear-gradient(180deg, #aaa, #eee);
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+.validation-list [target] {
+  display: block;
+  padding: 6px 10px 6px 35px;
+  background: url(./images/validation_icon.png) no-repeat 15px 50%;
+}
+/* 웹 관련 용어 */
+.term {
+  background: linear-gradient(180deg, #aaa, #eee);
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 15px;
+}
+.term-heading {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.odd {
+  background-color: yellow;
+  position: relative;
+}
+.odd dd {
+  margin: 0;
+}
+.term-list-subject,
+.term-list-brief {
+  padding-left: 70px;
+}
+.term-list-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .slogan {
   background-color: orange;
