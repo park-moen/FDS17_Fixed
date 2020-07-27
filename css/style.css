@@ -796,7 +796,7 @@ fieldset {
   height: 83px;
   position: absolute;
   left: 35px;
-  bottom: -15px;
+  bottom: -5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -819,8 +819,9 @@ fieldset {
 .slogan-brief q::before {
   font-size: 3rem;
   position: relative;
-  top: 10px;
-  margin-right: 5px;
+  vertical-align: middle;
+  /* top: 10px;
+  margin-right: 5px; */
   /* vertical-align: bottom; */
 }
 .slogan-brief q::after {
